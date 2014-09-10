@@ -19,21 +19,21 @@ DESCRIPTION
   Tied Interface
             tie my %MOD, "Module::Hash", %options;
 
-    The hash is tied to Module::Hash. Every time you fetch a hash key, such
-    as $MOD{"Math::BigInt"} that module is loaded, and the module name is
-    returned as a string. Thus the following works without you needing to
-    load Math::BigInt in advance.
+    The hash is tied to Module::Hash. Every time you fetch a hash key, such as
+    $MOD{"Math::BigInt"} that module is loaded, and the module name is
+    returned as a string. Thus the following works without you needing to load
+    Math::BigInt in advance.
 
             $MOD{"Math::BigInt"}->new(...)
 
-    You may wonder what the advantage is of this hash, rather that using
-    good old:
+    You may wonder what the advantage is of this hash, rather that using good
+    old:
 
             require Math::BigInt;
             Math::BigInt->new(...)
 
-    Well, the latter is actually ambiguous. Try defining a sub called
-    "BigInt" in the "Math" package!
+    Well, the latter is actually ambiguous. Try defining a sub called `BigInt`
+    in the `Math` package!
 
     You can provide an optional minimum version number for the module. The
     module will be checked against the required version number, but the
@@ -59,8 +59,8 @@ DESCRIPTION
     Attempting to modify the hash will croak.
 
   Import-Oriented Interface
-    If you just want to use the default options, you can supply a reference
-    to the hash in the import statement:
+    If you just want to use the default options, you can supply a reference to
+    the hash in the import statement:
 
             my %MOD;
             use Module::Hash \%MOD;
@@ -72,10 +72,10 @@ DESCRIPTION
             use Module::Hash $MOD;
             $MOD->{"Math::BigInt"}->new(...);
 
-    Little known fact: Perl has a built-in global hash called "%\". Unlike
-    "%+" and "%-" and some other built-in global hashes, the Perl core
-    doesn't use it for anything. And I don't think anybody else uses it
-    either. The following makes for some cute code...
+    Little known fact: Perl has a built-in global hash called `%\`. Unlike
+    `%+` and `%-` and some other built-in global hashes, the Perl core doesn't
+    use it for anything. And I don't think anybody else uses it either. The
+    following makes for some cute code...
 
             use Module::Hash \%\;
             $\{"Math::BigInt"}->new(...);
@@ -88,11 +88,11 @@ DESCRIPTION
 
     Methods:
 
-    "new(%options)"
-    "optimistic"
-    "has_prefix"
-    "prefix"
-    "use($hash_key)"
+    `new(%options)`
+    `optimistic`
+    `has_prefix`
+    `prefix`
+    `use($hash_key)`
 
 BUGS
     Please report any bugs to
@@ -110,8 +110,8 @@ AUTHOR
 COPYRIGHT AND LICENCE
     This software is copyright (c) 2012 by Toby Inkster.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+    This is free software; you can redistribute it and/or modify it under the
+    same terms as the Perl 5 programming language system itself.
 
 DISCLAIMER OF WARRANTIES
     THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
